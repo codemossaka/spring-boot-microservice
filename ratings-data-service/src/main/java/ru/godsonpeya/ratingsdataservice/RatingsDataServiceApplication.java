@@ -8,8 +8,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class RatingsDataServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RatingsDataServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RatingsDataServiceApplication.class, args);
+    }
 
 }

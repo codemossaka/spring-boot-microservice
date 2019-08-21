@@ -12,19 +12,19 @@ import org.springframework.web.reactive.function.client.WebClient;
 @EnableEurekaClient
 public class MovieCatalogServiceApplication {
 
-	@Bean
-	@LoadBalanced
-	public RestTemplate getRestTemplate(){
-		return new RestTemplate();
-	}
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
 
-	@Bean
-	public WebClient.Builder getWebBuilder(){
-		return WebClient.builder();
-	}
+    @Bean
+    public WebClient.Builder getWebBuilder() {
+        return WebClient.builder();
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(MovieCatalogServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MovieCatalogServiceApplication.class, args);
+    }
 
 }

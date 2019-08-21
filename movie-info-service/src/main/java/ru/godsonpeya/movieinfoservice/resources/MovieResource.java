@@ -10,7 +10,7 @@ import ru.godsonpeya.movieinfoservice.model.Movie;
 public class MovieResource {
 
     @RequestMapping(value = "/{movieId}")
-    public Movie getCatalog(@PathVariable("movieId") String movieId){
-        return new Movie(movieId,"test name");
+    public Movie getCatalog(@PathVariable("movieId") String movieId) {
+        return new Movie(movieId, "test name");
     }
 }

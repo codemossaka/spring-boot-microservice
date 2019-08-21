@@ -14,12 +14,12 @@ import java.util.List;
 public class RatingsResource {
 
     @RequestMapping(value = "/{movieId}")
-    public Rating getCatalog(@PathVariable("movieId") String movieId){
+    public Rating getCatalog(@PathVariable("movieId") String movieId) {
         return new Rating(movieId, 4);
     }
 
     @RequestMapping(value = "/users/{userId}")
-    public UserRating getRating(@PathVariable("userId") String userId){
+    public UserRating getRating(@PathVariable("userId") String userId) {
         List<Rating> ratings = Arrays.asList(
                 new Rating("1234", 4),
                 new Rating("4564", 3)

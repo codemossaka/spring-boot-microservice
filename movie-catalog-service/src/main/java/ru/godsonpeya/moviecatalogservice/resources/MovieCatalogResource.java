@@ -24,11 +24,11 @@ public class MovieCatalogResource {
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/{userId}")
-    public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
-        UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsData/users/"+ userId, UserRating.class);
+    public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
+        UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsData/users/" + userId, UserRating.class);
         return userRating.getUserRating().stream().map(rating -> {
-            Movie movie = restTemplate.getForObject("http://movie-info-service:8082/movies/"+rating.getMovieId(), Movie.class);
-            return  new CatalogItem(movie.getName(), "Desc", rating.getRating());
+            Movie movie = restTemplate.getForObject("http://movie-info-service:8082/movies/" + rating.getMovieId(), Movie.class);
+            return new CatalogItem(movie.getName(), "Desc", rating.getRating());
         }).collect(Collectors.toList());
     }
 }
